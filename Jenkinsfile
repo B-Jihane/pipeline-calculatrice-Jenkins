@@ -12,6 +12,12 @@ pipeline {
                 stash(name: 'compiled-results', includes: 'sources/*.py*')
             }
         }
+        stage('Branch') {
+            agent any
+            steps {
+                echo 'Multibrach Pipeline'
+            }
+        }        
         stage('Test') {
             agent {
                 docker {
